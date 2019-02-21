@@ -1,2 +1,2 @@
 # SEMP
-Solar radio burst Electron Motion Tracker
+**S**olar radio burst **E**lectron **M**otion **T**racker
