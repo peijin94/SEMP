@@ -23,10 +23,16 @@ Please find the sample data in the ./data/ directory, which is a good example to
 ### Run
 
 Simply run the runMe_gui.m in the ./src directory.
+ - Load data files of CDF format
+ - Input the poistions of WIND and STEREO
+ - Select the time range which contains a event
+ - Select the frequency channels
+ - Mark the leading edge (fun part)
+ - Start the 'Best Model Finding Process' by click 'NextStep'
 
 I also prepared a generated .mat data file : ./data/20101117.mat
 
-You can click "import" button in the LoadData GUI, and click all the way down to see the result
+You can click "import" button in the LoadData GUI, and click all the 'NextStep' way down to see the result
 
 The final step may take a few minutes to find the best solution for the radio source trajectory, thank you for the patience.
 
