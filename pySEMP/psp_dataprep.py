@@ -301,7 +301,7 @@ def backSub(data, percentile=1):
 
     
     print("Start of Background Subtraction of data")
-    dat = data.data.T
+    dat = data.T
     #dat = np.log10(dat)
     dat[np.where(np.isinf(dat)==True)] = 0.0
     dat_std = np.std(dat, axis=0)

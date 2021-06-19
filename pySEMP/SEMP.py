@@ -1,7 +1,7 @@
 import matplotlib.dates as mdates
 import numpy as np
 
-def findLeadingPoint(x,y,ratio_x=0.7):
+def findLeadingPoint(x,y,ratio_x=0.7,thresh_std=0):
     N_arr_x=y.ravel().shape[0]
     idx_x = np.arange(N_arr_x)
     x_dist=np.partition(y,int(ratio_x*N_arr_x))[:int(ratio_x*N_arr_x)]
@@ -14,7 +14,7 @@ def findLeadingPoint(x,y,ratio_x=0.7):
         np.where(y[0:np.argmax(y)]<var_d*3)][-1]
     idx_fit=idx_x[(cursor_prev-1):(cursor_prev+3)]
     fit_parm = np.polyfit(x[idx_fit],y[idx_fit],1)
-    x_get_this = -fit_parm[1]/fit_parm[0] 
+    x_get_this = (thresh_std*var_d-fit_parm[1])/fit_parm[0] 
     return x_get_this
 
 
