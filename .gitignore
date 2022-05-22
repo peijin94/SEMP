@@ -7,6 +7,8 @@ __pycache__/
 *.npy
 *.npz
 
+*.pkl 
+
 *.log
 *.err
 
@@ -17,6 +19,7 @@ img_v2/
 img_swind/
 datatmp/
 testruns/
+
 
 # C extensions
 *.so
