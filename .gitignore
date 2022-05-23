@@ -11,6 +11,8 @@ __pycache__/
 
 *.log
 *.err
+*.cdf
+*.mat
 
 moviedir/
 img/
