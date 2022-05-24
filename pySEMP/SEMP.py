@@ -113,30 +113,32 @@ def Dt_STA_WI_PSP(freq_STA,freq_WI,freq_PSP,
 def Dt_STA_WI_PSP_SOLO(freq_STA,freq_WI,freq_PSP,freq_SOLO,
         t_STA,t_WI,t_PSP,t_SOLO,
         t0,theta0,vs,v_sw,alpha_STA,alpha_WI,
-        alpha_PSP,alpha_SOLO,r_STA,r_WI,r_PSP,r_SOLO,Ne_par=2.0):
+        alpha_PSP,alpha_SOLO,r_STA,r_WI,r_PSP,r_SOLO,
+        w_STA,w_WI,w_PSP,w_SOLO,
+        Ne_par=2.0):
     
     dt2=0
     N = 0
 
     for ii,var in enumerate(freq_STA):
-        dt2 = dt2+ (t_STA[ii] - t_arrival_model(freq_STA[ii],
+        dt2 = dt2+w_STA*(t_STA[ii] - t_arrival_model(freq_STA[ii],
                     t0,theta0,vs,v_sw, alpha_STA, r_STA,Ne_par))**2;
-        N=N+1
+        N=N+w_STA
 
     for ii,var in enumerate(freq_WI):
-        dt2 = dt2+ (t_WI[ii] - t_arrival_model(freq_WI[ii],
+        dt2 = dt2+ w_WI*(t_WI[ii] - t_arrival_model(freq_WI[ii],
                     t0,theta0,vs,v_sw, alpha_WI, r_WI,Ne_par))**2;
-        N=N+1
+        N=N+w_WI
 
     for ii,var in enumerate(freq_PSP):
-        dt2 = dt2+ (t_PSP[ii] - t_arrival_model(freq_PSP[ii],
+        dt2 = dt2+ w_PSP*(t_PSP[ii] - t_arrival_model(freq_PSP[ii],
                     t0,theta0,vs,v_sw, alpha_PSP, r_PSP, Ne_par))**2;
-        N=N+1
+        N=N+w_PSP
 
     for ii,var in enumerate(freq_SOLO):
-        dt2 = dt2+ (t_SOLO[ii] - t_arrival_model(freq_SOLO[ii],
+        dt2 = dt2+ w_SOLO*(t_SOLO[ii] - t_arrival_model(freq_SOLO[ii],
                     t0,theta0,vs,v_sw, alpha_SOLO, r_SOLO, Ne_par))**2;
-        N=N+1
+        N=N+w_SOLO
 
     Dt = np.sqrt(dt2/N)
 
