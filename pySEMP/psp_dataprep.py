@@ -62,7 +62,7 @@ class fnames:
     freqname - name of frequency dataset in the CDF file
 
     """
-    def __init__(self,band,year,month,day,dipoles,dirdata='./'):
+    def __init__(self,band,year,month,day,dipoles,dirdata='./',prefix="psp_fld_l2_rfs_"):
         if dipoles == "V1V2":
             ch = "0"
         elif dipoles == "V3V4":
@@ -75,13 +75,13 @@ class fnames:
         self.month = month
         self.day = day
         self.dipoles = dipoles
-        self.fname = "psp_fld_l2_rfs_"+self.band+"_"+self.year+self.month+self.day+"_v01.cdf"
+        self.fname = prefix+self.band+"_"+self.year+self.month+self.day+"_v01.cdf"
 
         # PLACE HERE THE DIRECTORY WHERE RAW DATA IS
         self.path_data = dirdata+'psp/'+self.fname
 
         # HEADER NAMES
-        self.dataname = "psp_fld_l2_rfs_"+self.band+"_auto_averages_ch"+ch+"_"+self.dipoles
+        self.dataname = prefix+self.band+"_auto_averages_ch"+ch+"_"+self.dipoles
         self.epochname = "epoch_"+self.band+"_auto_averages_ch"+ch+"_"+self.dipoles
         self.freqname = "frequency_"+self.band+"_auto_averages_ch"+ch+"_"+self.dipoles
 
@@ -129,6 +129,7 @@ def data_from_CDF(date, myfile):
     data = np.array(data)
     epoch = np.array(epoch)
     freqs = np.array(freqs)
+    print(freqs)
     freqs = freqs[0,:]  
     
     # print(data.shape)
