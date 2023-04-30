@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 
 # data file ignore
-*.npy
-*.npz
+#*.npy
+#*.npz
 
 *.pkl 
 
