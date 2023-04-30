@@ -1,2 +1,21 @@
+[tool.poetry]
+name = "pysemp"
+version = "0.1.0"
+description = "Solar radio burst Electron Motion Tracker"
+authors = ["Peijin Zhang <peijin@ustc.edu>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "pysemp"},
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+cdflib = "^0.4.9"
+scipy = "^1.10.1"
+
+
 [build-system]
-requires = ["setuptools ~= 58.0"]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
