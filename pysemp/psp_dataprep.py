@@ -31,7 +31,8 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 #      Libraries                                      #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-from spacepy import pycdf
+#from spacepy import pycdf
+import cdflib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import datetime as dt
@@ -39,7 +40,6 @@ import numpy as np
 from statistics import mode
 import math
 import os
-import sunpy
 #import cdfopenV2 as cdfo
 
 
@@ -118,7 +118,7 @@ def data_from_CDF(date, myfile):
 
     cwd = os.getcwd()
     print(myfile.path_data)
-    cdf = pycdf.CDF(myfile.path_data)
+    cdf = cdflib.CDF(myfile.path_data)
     # print(cdf)
 
     data = cdf.get(myfile.dataname)

@@ -1,12 +1,12 @@
 import os
-os.environ["CDF_LIB"] = 'c:\cdf_distribution\cdf38_0-dist'
-from spacepy import pycdf
+#os.environ["CDF_LIB"] = 'c:\cdf_distribution\cdf38_0-dist'
+#from spacepy import pycdf
 import cdflib
 import numpy as np
 
 def solo_rpw_hfr(filepath):
     rpw_l2_hfr = cdflib.CDF(filepath)
-    l2_cdf_file = pycdf.CDF(filepath)
+    l2_cdf_file = cdflib.CDF(filepath)
 
     # times = l2_cdf_file['Epoch']
     # times = times[:]
