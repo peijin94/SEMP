@@ -2,32 +2,24 @@
 
 ## Forward Modeling of the Type III Radio Burst Exciter
 
-Detailed description of model can be found in ./paper.pdf
+Description of model can be found in ./paper.pdf
 
-Step-by-step demo:
+
+
+### Matlab
+
+Step-by-step demo (matlab):
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/p-Fkccnp0gQ/0.jpg)](https://www.youtube.com/watch?v=p-Fkccnp0gQ)
-
-### Install
 
 Install Matlab 2018b or newer then,
 
 ```bash
-git clone https://github.com/Pjer-zhang/SEMP.git
+git clone https://github.com/peijin94/SEMP.git
+cd SEMP/matlabsemp
 ```
 
-or download code zip
 
-### Data
-
-This tool uses the CDF-data from [NASA online database](https://cdaweb.sci.gsfc.nasa.gov/index.html/).
-
-The there should be two files for one event (STEREO A/B and WIND).
-
-Please find the sample data in the ./data/ directory, which is a good example to start with.
-
-### Run
-
-Simply run the runMe_gui.m in the ./src directory.
+Run the runMe_gui.m 
 
 - Load data files of CDF format
 - Input the poistions of WIND and STEREO
@@ -36,13 +28,31 @@ Simply run the runMe_gui.m in the ./src directory.
 - Mark the leading edge (fun part)
 - Start the 'Best Model Finding Process' by click 'NextStep'
 
-I also prepared a generated .mat data file : ./data/20101117.mat
 
-You can click "import" button in the LoadData GUI, and click all the 'NextStep' way down to see the result
+Click "import" button in the LoadData GUI, and click all the 'NextStep' way down to see the result
 
 The final step may take a few minutes to find the best solution for the radio source trajectory, thank you for the patience.
 
 (Please let me know if there is a problem using this code, contact me: pjer1316_AT_gmail.com)
+
+
+### Python
+
+```bash
+git clone https://github.come/peijin94/SEMP.git
+cd SEMP
+python -m pip install .
+```
+demo in Jupyter notebook in demo-ipynb folder
+
+
+### Data
+
+CDF data format [NASA online database](https://cdaweb.sci.gsfc.nasa.gov/index.html/).
+
+cdflib is used for reading CDF files.
+
+
 
 ### Reference
 
