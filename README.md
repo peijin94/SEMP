@@ -6,9 +6,35 @@ Description of model can be found in ./paper.pdf
 
 
 
+### Python
+
+```bash
+git clone https://github.come/peijin94/SEMP.git
+cd SEMP
+python -m pip install .
+```
+demo in Jupyter notebook in demo-ipynb folder
+
+
+### Data
+
+CDF data format [NASA online database](https://cdaweb.sci.gsfc.nasa.gov/index.html/).
+
+cdflib is used for reading CDF files.
+
+Download demo data:
+
+run this to download the data to parent folder
+```bash
+cd ../  
+gdown --folder https://drive.google.com/drive/folders/1y7--cGBXU3gsYz2nZ_kI_5plRAHQY4MO
+```
+
+
 ### Matlab
 
 Step-by-step demo (matlab):
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/p-Fkccnp0gQ/0.jpg)](https://www.youtube.com/watch?v=p-Fkccnp0gQ)
 
 Install Matlab 2018b or newer then,
@@ -36,29 +62,7 @@ The final step may take a few minutes to find the best solution for the radio so
 (Please let me know if there is a problem using this code, contact me: pjer1316_AT_gmail.com)
 
 
-### Python
 
-```bash
-git clone https://github.come/peijin94/SEMP.git
-cd SEMP
-python -m pip install .
-```
-demo in Jupyter notebook in demo-ipynb folder
-
-
-### Data
-
-CDF data format [NASA online database](https://cdaweb.sci.gsfc.nasa.gov/index.html/).
-
-cdflib is used for reading CDF files.
-
-Download demo data:
-
-run this to download the data to parent folder
-```bash
-cd ../  
-gdown --folder https://drive.google.com/drive/folders/1y7--cGBXU3gsYz2nZ_kI_5plRAHQY4MO
-```
 
 ### Reference
 
