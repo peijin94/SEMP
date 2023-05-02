@@ -52,7 +52,13 @@ CDF data format [NASA online database](https://cdaweb.sci.gsfc.nasa.gov/index.ht
 
 cdflib is used for reading CDF files.
 
+Download demo data:
 
+run this to download the data to parent folder
+```bash
+cd ../  
+gdown --folder https://drive.google.com/drive/folders/1y7--cGBXU3gsYz2nZ_kI_5plRAHQY4MO
+```
 
 ### Reference
 

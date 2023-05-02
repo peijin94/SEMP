@@ -121,9 +121,9 @@ def data_from_CDF(date, myfile):
     cdf = cdflib.CDF(myfile.path_data)
     # print(cdf)
 
-    data = cdf.get(myfile.dataname)
-    epoch = cdf.get(myfile.epochname)
-    freqs = cdf.get(myfile.freqname)
+    data = cdf.varget(myfile.dataname)
+    epoch = cdf.varget(myfile.epochname)
+    freqs = cdf.varget(myfile.freqname)
     
 
     data = np.array(data)
@@ -135,7 +135,6 @@ def data_from_CDF(date, myfile):
     # print(data.shape)
     # print(epoch.shape)
     # print(freqs.shape)
-    cdf.close()
     return data, epoch, freqs    
 
 
