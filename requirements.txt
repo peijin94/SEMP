@@ -17,3 +17,6 @@ spacepy==0.4.1
 tqdm==4.65.0
 yarg==0.1.9
 zipp==3.15.0
+pandas
+radiospectra
+astropy

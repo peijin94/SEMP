@@ -102,7 +102,7 @@ class data_spectro:
 
 
 
-def data_from_CDF(date, myfile):
+def data_from_CDF(date, myfile,verbose=False):
     """ data_from_CDF
      outputs dynamic spectra data from PSP CDF datafile. 
      inputs:
@@ -122,19 +122,19 @@ def data_from_CDF(date, myfile):
     # print(cdf)
 
     data = cdf.varget(myfile.dataname)
-    epoch = cdf.varget(myfile.epochname)
+    epoch = cdflib.cdfepoch.to_datetime(cdf.varget(myfile.epochname)) # return datetime format
     freqs = cdf.varget(myfile.freqname)
     
 
     data = np.array(data)
     epoch = np.array(epoch)
     freqs = np.array(freqs)
-    print(freqs)
     freqs = freqs[0,:]  
     
-    # print(data.shape)
-    # print(epoch.shape)
-    # print(freqs.shape)
+    if verbose:
+        print('data shape: ', data.shape)
+        print('t shape:', epoch.shape)
+        print('f shape:', freqs.shape)
     return data, epoch, freqs    
 
 
